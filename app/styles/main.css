@@ -1,0 +1,345 @@
+@font-face {
+    font-family: "Helvetica Neue LT Thin";
+    src: url("../fonts/helvetica_neue_lt_thin.eot?#iefix") format("eot"), url("../fonts/helvetica_neue_lt_thin.woff2") format("woff2"), url("../fonts/helvetica_neue_lt_thin.woff") format("woff"), url("../fonts/helvetica_neue_lt_thin.ttf") format("truetype"), url("../fonts/helvetica_neue_lt_thin.svg") format("svg");
+}
+
+@font-face {
+    font-family: "Helvetica Neue LT Light";
+    src: url("../fonts/helvetica_neue_lt_light.eot?#iefix") format("eot"), url("../fonts/helvetica_neue_lt_light.woff2") format("woff2"), url("../fonts/helvetica_neue_lt_light.woff") format("woff"), url("../fonts/helvetica_neue_lt_light.ttf") format("truetype"), url("../fonts/helvetica_neue_lt_light.svg") format("svg");
+}
+
+@font-face {
+    font-family: "Helvetica Neue LT Medium";
+    src: url("../fonts/helvetica_neue_lt_medium.eot?#iefix") format("eot"), url("../fonts/helvetica_neue_lt_medium.woff2") format("woff2"), url("../fonts/helvetica_neue_lt_medium.woff") format("woff"), url("../fonts/helvetica_neue_lt_medium.ttf") format("truetype"), url("../fonts/helvetica_neue_lt_medium.svg") format("svg");
+}
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-weight:normal;
+    color: #333;
+    font-size: 14px;
+    background-color: #fff;
+	font-family: "Helvetica Neue LT Light" !important;
+}
+
+label {
+	font-weight:normal;
+	color: #ffff00;
+}
+
+ .userValue {
+	font-weight:Bold;
+	color: #ffff00;
+    font-size: 24px;
+	font-family: "Helvetica Neue LT Light" !important;
+}
+
+.formHolder {
+    background-color: rgba(14, 14, 14, 0.34);;
+    padding: 24px 0 25px 0;
+    border-radius: 10px;
+}
+.formHolder hr {
+    margin: 24px 0 0 0;
+    background-color: #dfe4ea;
+    height: 1px;
+    border: 0;
+}
+.successPageHolder {
+    background-color: rgba(14, 14, 14, 0.34);
+    padding: 24px 0 25px 0;
+    border-radius: 10px;
+}
+.successPageHolder hr {
+    margin: 20px 0 10px 0;
+    background-color: #dfe4ea;
+    height: 1px;
+    border: 0;
+}
+
+.formBoxHeaderLogo {
+    height: 50px;
+    background: url(../images/online_logo.svg) no-repeat center;
+}
+.formHeading {
+    font-size: 24px;
+    color: rgba(245, 245, 245, 0.98);
+    line-height: 30px;
+    padding: 24px 18px 24px;
+    text-align: center;
+}
+.crfmHeading {
+    font-size: 18px;
+    color: rgba(245, 245, 245, 0.98);
+	padding-left:18px;
+	padding-right:18px;
+}
+.confTxt {
+    font-size: 18px;
+    color: rgba(245, 245, 245, 0.98);
+	padding-left:18px;
+	padding-right:18px;
+}
+.labelDiv {
+    float: left;
+}
+
+.detailDiv {
+    float: left;
+}
+.cstName {
+	font-size: 18px;
+	color: rgba(245, 245, 245, 0.98);
+    line-height: 30px;
+}
+
+.btn {
+    padding-left: 20px;
+    padding-right:20px;
+}
+.btn-submit{
+   width:40%;
+}
+.btn-reset{
+	margin-left:10px;
+	width:40%;
+}
+/*
+Form field Validations
+*/
+
+.ng-invalid.ng-touched {
+    border: solid 2px red;
+}
+.ng-valid.ng-touched {
+    border: solid 2px green;
+}
+input[placeholder] {
+	font-size:12px;
+}
+.glyphicon-remove {
+    color: red;
+}
+.glyphicon-ok {
+    color: green;
+} 
+
+ .field-error-msg {
+    color: red;
+    font-size: 12px;
+}
+
+/*buttons*/
+.btn.btn-primary {
+    color: #fff;
+    border-color: #d5002b;
+    background-color: #d5002b;
+    transition: background .2s ease,color .2s ease;
+}
+.btn.btn-primary:hover {
+    color: #fff;
+    border-color: #d5002b;
+    background-color: #e24d6b;
+    text-decoration: none;
+}
+/*
+Overlay
+*/
+.modal .modal-header {
+    overflow: hidden;
+    border-bottom: 1px solid #621a4b;
+    padding: 16px 12px 12px 18px;
+}
+
+.modal .modal-body {
+    padding: 24px 18px;
+}
+
+.modal .modal-footer {
+    background-color: #f4f3f0;
+    border-top: 1px solid #d7d2cb;
+    text-align: right;
+    padding: 12px 18px;
+}
+.modal-footer {
+    overflow: auto;
+}
+
+.btn.btn-primary:hover {
+     color: #fff;
+    border-color: #d5002b;
+    background-color: #e24d6b;
+    text-decoration: none;
+}
+.modal-footer .btn {
+    padding: 3px 12px 3px 12px;
+}
+
+.btn-min-width {
+    min-width: 50%;
+}
+
+.cmn-float-right {
+    float: right;
+}
+a {
+    color: #ffffff;
+	text-decoration:none;
+}
+a:hover {
+    color: yellow;
+}
+
+@media (max-width:575px) {
+	.mainSection {
+       background: url(../images/bg.jpg) no-repeat;
+	   margin: 0 auto;
+	   height: 800px;
+    }
+	.mainLoginContent {
+		margin: auto;
+		position: relative;
+	}
+	.formHolder {
+        width:100%;
+		position: relative;
+		
+    }
+	.successPageHolder {
+        width:70%;
+		position: relative;
+		margin-left:50px;
+    }
+	.input-label-holder {
+		padding-left:25px;
+		padding-right: 15px;
+		position: relative;
+		min-height: 1px;
+	}
+	.xsLabel {
+		width:100%;
+	}
+	.xsInput {
+		width:90%;
+	}
+	.cnfrmLabel {
+		width:40%;
+		float:left;
+		margin-left:30px;
+	}
+	.cnfrmInput {
+		width:30%;
+		float:left;
+		margin-left:-50px;
+	}
+	.usrCnfrmMargin {
+		margin-left:50px;
+	}
+	.usrCnfrmSpanMargin {
+		margin-left:15px;
+	}
+}
+@media screen and (min-width:576px) and (max-width:767px){
+    .mainSection {
+       background: url(../images/bg.jpg) no-repeat;
+	   margin: 0 auto;
+	   height: 800px;
+    }
+	.mainLoginContent {
+		margin: auto;
+		position: relative;
+	}
+	.formHolder {
+        width:70%;
+		position: relative;
+		margin-left:50px;
+    }
+	.successPageHolder {
+        width:70%;
+		position: relative;
+		margin-left:50px;
+    }
+	.input-label-holder {
+		padding-left:25px;
+		padding-right: 15px;
+		margin-left:50px;
+		position: relative;
+		min-height: 1px;
+	}
+	.xsLabel {
+		width:100%;
+	}
+	.xsInput {
+		width:75%;
+	}
+	
+	.usrCnfrmMargin {
+		margin-left:50px;
+	}
+	.usrCnfrmSpanMargin {
+		margin-left:15px;
+	}
+	.cnfrmLabel {
+		width:40%;
+		float:left;
+		margin-left:30px;
+	}
+	.cnfrmInput {
+		width:30%;
+		float:left;
+		margin-left:-50px;
+	}
+}
+
+@media (min-width: 768px) {
+    .mainSection {
+        margin: 0 auto;
+        background: url(../images/bg.jpg) no-repeat;
+        background-size: cover;
+        height: 950px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .mainLoginContent {
+		margin: auto;
+		position: relative;
+		width: 685px;
+	}
+    .formHolder {
+        width: 385px;
+		position: relative;
+		float: right;
+    }
+	.successPageHolder {
+        width: 385px;
+		position: relative;
+		float: right;
+    }
+	.btn-submit{
+		width:40%;
+	}
+	.btn-reset{
+		margin-left:10px;
+		width:40%;
+	}
+	.usrCnfrmMargin {
+		margin-left:50px;
+	}
+	.usrCnfrmSpanMargin {
+		margin-left:15px;
+	}
+   
+}
+/* iPad Landscape */
+ @media (min-width: 992px) {
+    .mainLoginContent {
+        width: 920px;
+    }
+}
+/* Large Desktop */
+
+@media (min-width: 1220px) {
+    .mainLoginContent {
+        width: 1020px;
+    }
+}

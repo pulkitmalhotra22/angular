@@ -1,0 +1,143 @@
+<!--Registration form-->
+<div id="formContent">
+    <div class="formScreen">
+        <div class="mainSection">
+            <div class="mainLoginContent">
+                <!--Registration form-->
+                <div ng-show="mainPage" class="formHolder">
+                    <div class="formBoxHeaderLogo" tabindex="0"></div>
+                    <hr>
+                    <div tabindex="0" class="formHeading">
+                        New Registration
+                    </div>
+                    <form novalidate class="form-horizontal" name="editContactForm">
+                        <div class="form-group has-feedback">
+                            <label class="control-label input-label-holder xsLabel col-sm-3" for="name">User ID</label>
+                            <div class="xsInput input-label-holder col-sm-8">
+                                <input type="text" aria-label="Please enter User ID field" role="textbox" name="userid" id="uid" class="form-control" placeholder="User id" ng-model="uid" ng-change="validateUID()" required>
+                                <span class="field-error-msg" ng-show="editContactForm.userid.$touched && editContactForm.userid.$error.required">Please provide a User Name</span>
+                                <span ng-class="{'glyphicon glyphicon-remove form-control-feedback' : editContactForm.userid.$invalid && editContactForm.userid.$touched, 'glyphicon glyphicon-ok form-control-feedback' : editContactForm.userid.$valid && editContactForm.userid.$touched}"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="control-label input-label-holder xsLabel col-sm-3" for="name">Name</label>
+                            <div class="xsInput input-label-holder col-sm-8">
+                                <input type="text" aria-label="Please enter Full Name field" role="textbox" name="fullname" id="name" class="form-control" placeholder="Full Name" alphabets-only ng-model="name" ng-change="validateName()" required>
+                                <span class="field-error-msg" ng-show="editContactForm.fullname.$touched && editContactForm.fullname.$invalid">Please provide your name</span>
+                                <span ng-class="{'glyphicon glyphicon-remove form-control-feedback' : editContactForm.fullname.$invalid && editContactForm.fullname.$touched, 'glyphicon glyphicon-ok form-control-feedback' : editContactForm.fullname.$valid && editContactForm.fullname.$touched}"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label class="control-label input-label-holder xsLabel col-sm-3" for="inputEmail">Email</label>
+                            <div class="xsInput input-label-holder col-sm-8">
+                                <input type="email" aria-label="Please enter email field" role="textbox" name="email" id="inputEmail" class="form-control" placeholder="Email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-model="email" ng-change="validateEmail()" maxlength="50" required>
+                                <span class="field-error-msg" ng-show="editContactForm.email.$touched && editContactForm.email.$invalid">Please provide a valid email address</span>
+                                <span ng-class="{'glyphicon glyphicon-remove form-control-feedback' : editContactForm.email.$invalid && editContactForm.email.$touched, 'glyphicon glyphicon-ok form-control-feedback' : editContactForm.email.$valid && editContactForm.email.$touched}"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="control-label input-label-holder xsLabel col-sm-3" for="phoneNumber">Phone</label>
+                            <div class="xsInput input-label-holder col-sm-8">
+                                <input type="tel" aria-label="Please enter phone number field" role="textbox" name="number" id="phoneNumber" class="form-control" placeholder="Number (6-15 digits)" numbers-only ng-model="number" ng-change="validatePhone()" ng-minlength="6" maxlength="15" required>
+                                <span class="field-error-msg" ng-show="editContactForm.number.$touched && editContactForm.number.$invalid || editContactForm.number.$error.minlength">Please provide a valid contact number</span>
+
+                                <span ng-class="{'glyphicon glyphicon-remove form-control-feedback': editContactForm.number.$invalid && editContactForm.number.$touched || editContactForm.number.$error.minlength, 'glyphicon glyphicon-ok form-control-feedback': editContactForm.number.$valid && editContactForm.number.$touched}"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label input-label-holder xsLabel col-sm-3">Charity</label>
+                            <div class="xsInput input-label-holder col-sm-8">
+                                <select aria-label="Please select charity field" role="select" name="charity" class="form-control" ng-model="orgSelect" ng-change="validateSelect()" required>
+                                        <option value="">Please select</option>
+                                        <option ng-repeat="org in charityOpts" value={{org.name}}>{{org.name}}</option>
+                                    </select>
+                                <span class="field-error-msg" ng-show="editContactForm.charity.$touched && editContactForm.number.$invalid">Please select a valid option</span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="control-label input-label-holder xsLabel col-sm-3" for="amount">Amount</label>
+                            <div class="xsInput input-label-holder col-sm-8">
+                                <input type="text" aria-label="Please enter Amount field" role="textbox" name="amount" id="amount" class="form-control" placeholder="$10-$10000" numbers-only ng-model="amount" ng-change="validateAmount()" required>
+                                <span class="field-error-msg" ng-show="editContactForm.amount.$touched && editContactForm.amount.$invalid">Please enter a valid amount</span>
+
+                                <span ng-class="{'glyphicon glyphicon-remove form-control-feedback': editContactForm.amount.$invalid && editContactForm.amount.$touched, 'glyphicon glyphicon-ok form-control-feedback': editContactForm.amount.$valid && editContactForm.amount.$touched}"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label input-label-holder xsLabel col-sm-3">Gender</label>
+                            <div class="xsInput input-label-holder col-sm-8">
+                                <label class="radio-inline"><input type="radio" ng-model="gender" name="genderRadios" value="male">Male</label>
+                                <label class="radio-inline"><input type="radio" ng-model="gender" name="genderRadios" value="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="xsInput control-label input-label-holder col-sm-offset-2 col-sm-9">
+                                <label class="checkbox-inline"><input type="checkbox" value="agree">  I agree to the <a id="termsconditions" data-toggle="modal"
+							data-target=".terms-and-condition" role="link" href="#">Terms and Conditions</a>.</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="xsInput control-label input-label-holder col-sm-offset-2 col-sm-8">
+                                <input type="button" role="button" class="btn btn-primary btn-submit" value="Submit" ng-disabled="!checkValidSubmit" ng-click="confirmForm()">
+                                <input type="reset" role="button" class="btn btn-default btn-reset" value="Reset" ng-disabled="!checkValidReset" >
+                            </div>
+                        </div>
+                        <!--Overlay built within the template but can be extracted into a seperate file as well-->
+                        <div class="modal fade terms-and-condition" tabindex="-1" role="dialog" aria-labelledby="termsconditionsmodalabel">
+                            <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="systemModalLabel">Terms and Conditions</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        We are currently under construction and the "Terms and Condition" page will soon be updated.
+                                        <hr>Apologies for inconvenience.....</div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary btn-md btn-min-width cmn-float-right" data-dismiss="modal">Close</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--Display Registration form results: Shows the power of Angulas JS Two way Data Binding-->
+                <div ng-show="confirmPage" class='successPageHolder slide'>
+                    <div class="formBoxHeaderLogo" tabindex="0"></div>
+                    <hr>
+                    <div tabindex="0" class="crfmHeading">
+                        Thank you <span class="userValue">{{name}}</span> for your support!!!
+                    </div><br>
+                    <div class="confTxt">
+                        <p>Please find your details below:</p>
+                        <hr>
+                    </div>
+                    <div class="cnfrm">
+                        <form class="form-horizontal">
+                            <div class="form-group has-feedback">
+                                <label class="control-label input-label-holder cnfrmLabel col-sm-3">User ID:</label>
+                                <div class="cnfrmInput input-label-holder col-sm-8">
+                                    <label class="control-label input-label-holder" ng-bind="uid"></label>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label input-label-holder cnfrmLabel col-sm-3">Charity:</label>
+                                <div class="cnfrmInput input-label-holder col-sm-8">
+                                    <label class="control-label input-label-holder" ng-bind="orgSelect"></label>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label input-label-holder cnfrmLabel col-sm-3">Amount:</label>
+                                <div class="cnfrmInput input-label-holder col-sm-8">
+                                    <label class="control-label input-label-holder" ng-bind="amount">aud</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
